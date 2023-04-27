@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // component for Creating new blog posts
 const Create = () => {
@@ -8,7 +8,7 @@ const Create = () => {
     const [body, setBody] = useState(''); //blank default
     const [author, setAuthor] = useState('Robert');  //'Robert' default
     const [isPending, setIsPending] = useState(false); //whether we are waiting to add the blog or not
-    const history = useHistory();
+    const history = useNavigate();
 
     //form submit handler
     const handleSubmit = (e) => {
