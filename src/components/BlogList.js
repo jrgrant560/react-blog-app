@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// BlogList component that lists all blogs; takes 'blogs' and 'title' parameters
 const BlogList = ({blogs, title}) => {
     
     return ( 

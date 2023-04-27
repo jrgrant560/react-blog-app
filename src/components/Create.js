@@ -28,12 +28,13 @@ const Create = () => {
         })
     }
 
-    // ADD COMMENTS FOR THIS SECTION
+    // form that handles new blog creation
     return ( 
         <div className="create">
             <h2>Add a New Blog</h2>
             <form onSubmit={handleSubmit}>
                 <label>Blog Title</label>
+                {/* title text input */}
                 <input 
                     type="text"
                     required
@@ -41,12 +42,14 @@ const Create = () => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <label>Blog Body:</label>
+                {/* body text input */}
                 <textarea
                     required
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
                 />
                 <label>Blog author:</label>
+                {/* author select input: 3 options */}
                 <select
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
