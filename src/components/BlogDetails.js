@@ -5,14 +5,14 @@ import useFetch from '../hooks/useFetch';
 const BlogDetails = () => {
     const { id } = useParams(); //extract id from params
     const { data: blog, error, isPending } =  useFetch('http://localhost:8000/blogs/' + id); //???
-    const history = useNavigate(); //history stack of past components or pages visited
+    const navigate = useNavigate(); //navigation hook
 
-    //function that handles delete operation; pushes homepage to history stack, redirecting user
+    //function that handles delete operation; navigates to homepage, redirecting user
     const handleClick = () => {
         fetch('http://localhost:8000/blogs/'+ blog.id, {
             method: 'DELETE'
         }).then(() => {
-            history.push('/');
+           navigate('/');
         })
     }
 

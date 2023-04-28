@@ -6,9 +6,9 @@ const Create = () => {
     // form fields
     const [title, setTitle] = useState(''); //blank default
     const [body, setBody] = useState(''); //blank default
-    const [author, setAuthor] = useState('Robert');  //'Robert' default
+    const [author, setAuthor] = useState('Shubham');  //'Robert' default
     const [isPending, setIsPending] = useState(false); //whether we are waiting to add the blog or not
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     //form submit handler
     const handleSubmit = (e) => {
@@ -24,7 +24,7 @@ const Create = () => {
             body: JSON.stringify(blog)
         }).then(() => {
             setIsPending(false); //turn off pending
-            history.push('/'); //push the page to history, redirecting user to homepage
+            navigate('/'); //redirect user to homepage
         })
     }
 
@@ -57,6 +57,7 @@ const Create = () => {
                     <option value="Shubham">Shubham</option>
                     <option value="Satyam">Satyam</option>
                     <option value="Anmol">Anmol</option>
+                    <option value="Smooth Criminal">Smooth Criminal</option>
                 </select>
                 {/* if not loading, allow add blog */}
                 {!isPending && <button>Add Blog</button>}
